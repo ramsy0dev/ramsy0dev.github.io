@@ -1,2 +1,2 @@
-# ramsy0dev.github.io
-My personal website
+
+My personal website check it out at https://ramsy0dev.github.io
