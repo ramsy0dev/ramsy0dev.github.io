@@ -6,7 +6,7 @@ paginate = 10
 pluralizelisttitles = false   # removes the automatically appended "s" on sidebar entries
 
 # NOTE: If using Disqus as commenting engine, uncomment and configure this line
-# disqusShortname = "yourDisqusShortname"
+disqusShortname = "ramsy0dev"
 
 [params]
     brand = "ramsy0dev"                      # name of your site - appears in the sidebar
