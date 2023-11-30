@@ -1,0 +1,24 @@
+<div class="sidebar-about">
+    <h1 class="brand">
+        {{ if .Site.Params.remote_brand_image }}
+            <a href="{{ .Site.BaseURL }}">
+                <img src="{{ .Site.Params.remote_brand_image }}" alt="brand image">
+            </a>
+        {{ else if .Site.Params.brand_image }}
+            <a href="{{ .Site.BaseURL }}">
+                <img src="{{ .Site.Params.brand_image }}" alt="brand image">
+            </a>
+        {{ end }}
+        {{ if .Site.Params.brand }}
+            <a href="{{ .Site.BaseURL }}">
+                <h1>{{ .Site.Params.brand }}</h1>
+            </a>
+        {{ end }}
+    </h1>
+    <p class="lead">
+    {{ with .Site.Params.description }}{{. | safeHTML}}{{end}}
+    <br>
+    <br>
+    <span style="font-weight:bold; font-size:40px;"> <span style="color:white;">Free</span> <span style="color:black;">P</span><span style="color:white;">a</span><span style="color:green;">l</span><span style="color:red;">estine</span></span>
+    </p>
+</div>
