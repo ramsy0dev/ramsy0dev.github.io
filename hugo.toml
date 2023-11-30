@@ -102,7 +102,7 @@ disqusShortname = "ramsy0dev"
                                           # e.g. /assets/images/site/og-image.png becomes images/site/og-image.png
     # publisher_icon = ""                 # path to publisher icon - defaults to favicon, used in schema
 
-    hideToc = false
+    hideToc = false # Show table of content in the sidebar
 
 [taxonomies]
     series = 'series'
