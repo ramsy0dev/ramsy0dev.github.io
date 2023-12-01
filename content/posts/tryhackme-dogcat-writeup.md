@@ -22,9 +22,8 @@ Find all the four flags in the box.
 
 The tools that we are going to be using are:
 
-* Nmap
-* Nikto
-* Metasploit
+* **Nmap**
+* **Metasploit**
 
 # Steps
 
