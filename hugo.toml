@@ -9,6 +9,9 @@ googleAnalytics = "G-SPLCKE0Z4E"
 # NOTE: If using Disqus as commenting engine, uncomment and configure this line
 disqusShortname = "ramsy0dev"
 
+# Generate robots.txt
+enableRobotsTXT = true
+
 [params]
     brand = "ramsy0dev"                      # name of your site - appears in the sidebar
     # remote_brand_image = 'https://avatars.githubusercontent.com/u/86024158?v=4' # path to a remote file
