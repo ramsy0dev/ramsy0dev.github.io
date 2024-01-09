@@ -23,4 +23,8 @@ You can donate now through ko-fi
 
 <iframe id='kofiframe' src='https://ko-fi.com/ramsy0dev/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;padding:4px;background:#f9f9f9;' height='712' title='ramsy0dev'></iframe>
 
-or using Monero $XMR, my wallet address: `44XfbMt7KCLhLaGJ6PY6EwY99quAx7qKJcf4TPy6ce5zGbbKw7MqiZNgnveABur84vP9vjJcRBRwRCtDbGBbCAdPA9tAMGW`
+or using Monero $XMR, my wallet address:
+
+```bash
+44XfbMt7KCLhLaGJ6PY6EwY99quAx7qKJcf4TPy6ce5zGbbKw7MqiZNgnveABur84vP9vjJcRBRwRCtDbGBbCAdPA9tAMGW
+```
