@@ -4,7 +4,7 @@ title = 'ramsy0dev'
 theme = "poison"
 paginate = 10
 pluralizelisttitles = false   # removes the automatically appended "s" on sidebar entries
-googleAnalytics = "G-SPLCKE0Z4E"
+#googleAnalytics = "G-SPLCKE0Z4E"
 
 # NOTE: If using Disqus as commenting engine, uncomment and configure this line
 disqusShortname = "ramsy0dev"
@@ -112,7 +112,3 @@ enableRobotsTXT = true
     series = 'series'
     tags = 'tags'
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
