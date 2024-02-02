@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ramsy0dev</title>
+    <link>https://ramsy0dev.github.io/</link>
+    <description>Recent content on ramsy0dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Dec 2023 20:11:40 +0100</lastBuildDate>
+    <atom:link href="https://ramsy0dev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TryHackMe Dogcat writeup</title>
+      <link>https://ramsy0dev.github.io/posts/tryhackme-dogcat-writeup/</link>
+      <pubDate>Fri, 01 Dec 2023 20:11:40 +0100</pubDate>
+      <guid>https://ramsy0dev.github.io/posts/tryhackme-dogcat-writeup/</guid>
+      <description>Today we are going to be taking a look at the dogcat room and hopefully try and solve it.&#xA;Room info Description I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container.&#xA;Objective Find all the four flags in the box.&#xA;Tools The tools that we are going to be using are:&#xA;Nmap Metasploit Steps First let begin with a simple nmap scan to get an idea about the open ports the box have.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://ramsy0dev.github.io/about/about/</link>
+      <pubDate>Wed, 29 Nov 2023 22:25:28 +0100</pubDate>
+      <guid>https://ramsy0dev.github.io/about/about/</guid>
+      <description>Introduction Hello,&#xA;I go by ramsy0dev, i am a self-tauth developer and cybersecurity intermedier from Galaxy.&#xA;I&amp;rsquo;m currently working on my own startup called PufferBlow, it&amp;rsquo;s an open source privacy focused Discord alternative and one day i want to turn it into a fediverse network.&#xA;Github status Donations All donations are acceptable. You can donate now through ko-fi:&#xA;or using Monero $XMR, my wallet address:&#xA;44XfbMt7KCLhLaGJ6PY6EwY99quAx7qKJcf4TPy6ce5zGbbKw7MqiZNgnveABur84vP9vjJcRBRwRCtDbGBbCAdPA9tAMGW </description>
+    </item>
+    <item>
+      <title>Hello World!!!</title>
+      <link>https://ramsy0dev.github.io/posts/hello-world/</link>
+      <pubDate>Wed, 29 Nov 2023 22:24:46 +0100</pubDate>
+      <guid>https://ramsy0dev.github.io/posts/hello-world/</guid>
+      <description>First ever post on my blog, hope it continues 👻👻👻.</description>
+    </item>
+  </channel>
+</rss>

