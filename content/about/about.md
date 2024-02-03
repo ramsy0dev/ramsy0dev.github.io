@@ -19,12 +19,8 @@ I'm currently working on my own startup called [PufferBlow](https://github.com/P
 # Donations
 
 All donations are acceptable.
-You can donate now through ko-fi:
+You can donate now through ko-fi: [ko-fi.com/ramsy0dev](ko-fi.com/ramsy0dev), or using Monero $XMR, my wallet address:
 
-<iframe id='kofiframe' src='https://ko-fi.com/ramsy0dev/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;padding:4px;background:#f9f9f9;' height='712' title='ramsy0dev'></iframe>
-
-or using Monero $XMR, my wallet address:
-
-```bash
+```console
 44XfbMt7KCLhLaGJ6PY6EwY99quAx7qKJcf4TPy6ce5zGbbKw7MqiZNgnveABur84vP9vjJcRBRwRCtDbGBbCAdPA9tAMGW
 ```
