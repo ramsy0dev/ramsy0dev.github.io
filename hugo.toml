@@ -33,14 +33,14 @@ enableRobotsTXT = true
         {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
     ]
 
-    # Links to your socials.  Comment or delete any you don't need/use. 
-    discord_url = "https://discord.gg/hjvK5cJC"
+    # Links to your socials.  Comment or delete any you don't need/use.
+    #discord_url = "https://discord.gg/xxxxxxxx"
     email_url = "mailto://ramsy0dev@gmail.com"
     # facebook_url = "https://facebook.com"
     # flickr_url = "https://flickr.com"
     github_url = "https://github.com/ramsy0dev"
     # gitlab_url = "https://gitlab.com"
-    instagram_url = "https://instagram.com/ramsy0dev"
+    #instagram_url = "https://instagram.com/xxxxxx"
     # linkedin_url = "https://linkedin.com/ramsy0dev"
     # mastodon_url = "https://mastodon.social"
     # matrix_url = "https://matrix.org"
