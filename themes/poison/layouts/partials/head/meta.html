@@ -92,18 +92,21 @@
 <!-- Article Specific Tags -->
 <!-- To make sure this renders only in the article page, we check the section -->
 {{ if eq .Section "posts" }}
-<!-- Pagination meta tags for list pages only -->
-{{ $paginator := .Paginate (where .Pages "Type" "posts") }}
-{{ if $paginator }}
-  <link rel="first" href="{{ $paginator.First.URL }}" />
-  <link rel="last" href="{{ $paginator.Last.URL }}" />
-  {{ if $paginator.HasPrev }}
-    <link rel="prev" href="{{ $paginator.Prev.URL }}" />
-  {{end }}
-  {{ if $paginator.HasNext }}
-    <link rel="next" href="{{ $paginator.Next.URL }}" />
-  {{end }}
-{{end }}
+  <!-- Check if the current page is a list page -->
+{{ if eq .Kind "list" }}
+  <!-- Pagination meta tags for list pages only -->
+  {{ $paginator :=.Paginate (where.Pages "Type" "posts") }}
+  {{ if $paginator }}
+    <link rel="first" href="{{ $paginator.First.URL }}" />
+    <link rel="last" href="{{ $paginator.Last.URL }}" />
+    {{ if $paginator.HasPrev }}
+      <link rel="prev" href="{{ $paginator.Prev.URL }}" />
+    {{ end }}
+    {{ if $paginator.HasNext }}
+      <link rel="next" href="{{ $paginator.Next.URL }}" />
+    {{ end }}
+  {{ end }}
+{{ end }}
 
 <meta property="og:type" content="article" />
 <meta property="article:publisher" content="{{ .Site.Params.facebook_url }}" />

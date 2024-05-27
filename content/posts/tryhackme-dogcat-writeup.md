@@ -3,10 +3,9 @@ title = 'TryHackMe Dogcat writeup'
 date = 2023-12-01T20:11:40+01:00
 draft = false
 tags = ['tryhackme', 'writeup']
-hideToc = true
 +++
 
-Today we are going to be taking a look at the **[dogcat](https://tryhackme.com/room/dogcat)** room and hopefully try and solve it. 
+Today we are going to be taking a look at the **[dogcat](https://tryhackme.com/room/dogcat)** room and hopefully try and solve it.
 
 # Room info
 
@@ -83,7 +82,7 @@ Scanned at 2023-12-01 20:17:44 +01 for 30s
 Not shown: 998 closed tcp ports (reset)
 PORT   STATE    SERVICE REASON              VERSION
 22/tcp open     ssh     syn-ack ttl 63      OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   2048 24:31:19:2a:b1:97:1a:04:4e:2c:36:ac:84:0a:75:87 (RSA)
 | ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCeKBugyQF6HXEU3mbcoDHQrassdoNtJToZ9jaNj4Sj9MrWISOmr0qkxNx2sHPxz89dR0ilnjCyT3YgcI5rtcwGT9RtSwlxcol5KuDveQGO8iYDgC/tjYYC9kefS1ymnbm0I4foYZh9S+erXAaXMO2Iac6nYk8jtkS2hg+vAx+7+5i4fiaLovQSYLd1R2Mu0DLnUIP7jJ1645aqYMnXxp/bi30SpJCchHeMx7zsBJpAMfpY9SYyz4jcgCGhEygvZ0jWJ+qx76/kaujl4IMZXarWAqchYufg57Hqb7KJE216q4MUUSHou1TPhJjVqk92a9rMUU2VZHJhERfMxFHVwn3H
 |   256 21:3d:46:18:93:aa:f9:e7:c9:b5:4c:0f:16:0b:71:e1 (ECDSA)
@@ -253,8 +252,8 @@ http://xx.xx.xx.xx/?view=./dog/../../../../../../../var/log/apache2/access.log&e
 we get the **apache** server logs:
 
 ``` console
-10.18.91.159 - - [01/Dec/2023:18:27:19 +0000] "GET /cgi-sys/finger.pl HTTP/1.1" 404 490 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" 
-10.18.91.159 - - [01/Dec/2023:18:27:19 +0000] "GET /cgi-local/finger.pl HTTP/1.1" 404 490 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" 
+10.18.91.159 - - [01/Dec/2023:18:27:19 +0000] "GET /cgi-sys/finger.pl HTTP/1.1" 404 490 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+10.18.91.159 - - [01/Dec/2023:18:27:19 +0000] "GET /cgi-local/finger.pl HTTP/1.1" 404 490 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
 10.18.91.159 - - [01/Dec/2023:18:27:19 +0000] "GET /htbin/finger.pl HTTP/1.1" 404 490 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
 ```
 

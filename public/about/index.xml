@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on ramsy0dev</title>
-    <link>https://ramsy0dev.github.io/about/</link>
+    <link>http://localhost:1313/about/</link>
     <description>Recent content in About on ramsy0dev</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 29 Nov 2023 22:25:28 +0100</lastBuildDate>
-    <atom:link href="https://ramsy0dev.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>https://ramsy0dev.github.io/about/about/</link>
+      <link>http://localhost:1313/about/about/</link>
       <pubDate>Wed, 29 Nov 2023 22:25:28 +0100</pubDate>
-      <guid>https://ramsy0dev.github.io/about/about/</guid>
-      <description>Introduction Hello,&#xA;I go by ramsy0dev, i am a self-tauth developer and cybersecurity intermedier from Galaxy.&#xA;I&amp;rsquo;m currently working on my own startup called PufferBlow, it&amp;rsquo;s an open source privacy focused Discord alternative and one day i want to turn it into a fediverse network.&#xA;Github status Donations All donations are acceptable. You can donate now through ko-fi:&#xA;or using Monero $XMR, my wallet address:&#xA;44XfbMt7KCLhLaGJ6PY6EwY99quAx7qKJcf4TPy6ce5zGbbKw7MqiZNgnveABur84vP9vjJcRBRwRCtDbGBbCAdPA9tAMGW </description>
+      <guid>http://localhost:1313/about/about/</guid>
+      <description>Introduction Hello,&#xA;I go by ramsy0dev, i am a self-tauth developer and cybersecurity intermedier from Galaxy.&#xA;I&amp;rsquo;m currently working on my own startup called PufferBlow, it&amp;rsquo;s an open source privacy focused Discord alternative and one day i want to turn it into a fediverse network.&#xA;Github status Donations All donations are acceptable. You can donate now through ko-fi: ko-fi.com/ramsy0dev, or using Monero $XMR, my wallet address:&#xA;44XfbMt7KCLhLaGJ6PY6EwY99quAx7qKJcf4TPy6ce5zGbbKw7MqiZNgnveABur84vP9vjJcRBRwRCtDbGBbCAdPA9tAMGW </description>
     </item>
   </channel>
 </rss>
